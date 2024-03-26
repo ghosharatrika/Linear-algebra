@@ -1,4 +1,4 @@
-# This code calculates the QR decompositon of a matrix and hence finds its eigenvalues and compare it with that obtained from numpy.linalg.eigh
+# This code calculates the QR decompositon of a matrix and hence finds its eigenvalues and compares it with that obtained from numpy.linalg.eigh
 
 import numpy as np
 
@@ -12,6 +12,8 @@ iterations = 30
 for i in range(iterations):
     Q, R = np.linalg.qr(Ak)
     Ak = Q.T @ Ak @ Q
+    if i == 0:
+      print("\nQR decomposition of A:\nQ = ", Q, "\n\nR =", R)
 
 
 # Calculating eigenvalues using QR decomposition
@@ -20,5 +22,7 @@ eigenvalues_QR = np.diag(Ak)
 eigenvalues_eigh = np.linalg.eigh(A)[0]
 
 # Printing the results
-print("Eigenvalues using QR decomposition:", eigenvalues_QR)
+print("\nEigenvalues using QR decomposition:", eigenvalues_QR)
 print("Eigenvalues using numpy.linalg.eigh:", eigenvalues_eigh)
+import numpy as np
+
