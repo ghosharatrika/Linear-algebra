@@ -24,5 +24,5 @@ eigenvalues_eigh = np.linalg.eigh(A)[0]
 # Printing the results
 print("\nEigenvalues using QR decomposition:", eigenvalues_QR)
 print("Eigenvalues using numpy.linalg.eigh:", eigenvalues_eigh)
-import numpy as np
+
 
